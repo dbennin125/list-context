@@ -8,7 +8,7 @@ export const makeLabel = (word) => {
   if(!matchedCamelCase)  {
     label = makeUpperCase(word);
   } else {
-    const firstWord = word.split(/(?=[A-Z])/)[0];
+    const [firstWord] = word.split(/(?=[A-Z])/);
     label = `${makeUpperCase(firstWord)} ${matchedCamelCase.join(' ')}`;
   }
   return label;
